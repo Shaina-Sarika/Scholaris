@@ -7,8 +7,8 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
 
-from chatbot_utility import get_chapter_list
-from get_yt_video import get_yt_video_link
+from src.chatbot_utility import get_chapter_list
+from src.get_yt_video import get_yt_video_link
 
 
 # Load environment variables
