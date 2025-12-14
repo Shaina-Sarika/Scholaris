@@ -28,7 +28,10 @@ def get_vector_db_path(chapter, subject):
 
 def setup_chain(selected_chapter, selected_subject):
     vector_db_path = get_vector_db_path(selected_chapter, selected_subject)
-    embeddings = HuggingFaceEmbeddings(model_kwargs={"device": DEVICE}) # Use device from env
+    embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2",
+    model_kwargs={"device": "cpu"}
+    )
     vectorstore = Chroma(persist_directory=vector_db_path, embedding_function=embeddings)
     llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
     memory = ConversationBufferMemory(llm=llm, output_key='answer', memory_key='chat_history', return_messages=True)
