@@ -210,3 +210,7 @@ __marimo__/
 # vector stores
 vector_db
 chapters_vector_db
+
+.env
+.env.*
+*.env
