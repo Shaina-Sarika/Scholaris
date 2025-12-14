@@ -16,8 +16,7 @@ vector_db_dir = f"{parent_dir}/vector_db"
 chapters_vector_db_dir = f"{parent_dir}/chapters_vector_db"
 
 embedding = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2",
-    model_kwargs={"device": "cpu"}
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
 text_splitter = CharacterTextSplitter(chunk_size=2000, chunk_overlap=500)
