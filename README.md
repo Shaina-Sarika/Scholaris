@@ -1,1 +1,1 @@
-# project-2-studypal-study-assistant
+# project-scholaris-study-assistant
