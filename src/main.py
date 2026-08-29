@@ -32,7 +32,7 @@ def setup_chain(selected_chapter, selected_subject):
     model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
     vectorstore = Chroma(persist_directory=vector_db_path, embedding_function=embeddings)
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
+    llm = ChatGroq(model="openai/gpt-oss-120b", temperature=0)
     memory = ConversationBufferMemory(llm=llm, output_key='answer', memory_key='chat_history', return_messages=True)
     chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
